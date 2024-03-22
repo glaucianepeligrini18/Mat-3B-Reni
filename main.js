@@ -1,18 +1,23 @@
 const botoes = document.querySelectorAll(".botao");
+const textos = document.querySelectorAll(".aba-conteudo");
 
-for(let i=0;i <botoes.length;i++){
-    botoes[i].onclick = function(){
 
-        for(let j=0;j<botoes.length;j++){
+
+for (let i = 0; i < botoes.length; i++) {
+    botoes[i].onclick = function () {
+
+        for (let j = 0; j < botoes.length; j++) {
             botoes[j].classList.remove("ativo");
+            textos[j].classList.remove("ativo");
         }
 
         botoes[i].classList.add("ativo");
+        textos[i].classList.add("ativo");
     }
-}  <div class="abas-textos">
-<div class="aba-conteudo">
-    <h3 class="aba-conteudo-titulo-principal">Estudar 4 cursos na Alura</h3>
-    <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
-</div>
-</div>
+}
 
+const contadores = document.querySelectorAll(".contador");
+const tempoObjetivo1 = new Date("2023-10-05T00:00:00");
+let tempoAtual = new Date();
+
+contadores[0].textContent = tempoObjetivo1 - tempoAtual;
